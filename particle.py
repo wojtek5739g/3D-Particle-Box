@@ -6,10 +6,14 @@ def main():
     # mlab.points3d(x, y, z, value)
     # mlab.show()
 
-    a, b, c = 5, 5, 5
-    p, q, r = 2, 3, 1
-    x, y, z = np.ogrid[-5:5:64j, -5:5:64j, -5:5:64j]
-    scalars = abs((np.sin((p*np.pi*x)/a))*(np.sin((q*np.pi*y)/b))*(np.sin((r*np.pi*z)/c)))**2
+    a, b, c = 10, 10, 10
+    p, q, r = 2, 1, 1
+    x = np.arange(a)
+    y = np.arange(b)
+    z = np.arange(c)
+    # x, y, z = np.ogrid[-5:5:64j, -5:5:64j, -5:5:64j]
+    xx, yy, zz = np.meshgrid(x, y, z)
+    scalars = abs((np.sin((p*np.pi*xx)/a))*(np.sin((q*np.pi*yy)/b))*(np.sin((r*np.pi*zz)/c)))**2
     mlab.contour3d(scalars, contours=4, transparent=True)
     mlab.show()
 
