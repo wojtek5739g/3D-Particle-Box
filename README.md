@@ -1,2 +1,2 @@
 # 3D-Particle-Box
-Representating a quantum particle in 3D Box
+Representating a quantum particle in a 3D Box
