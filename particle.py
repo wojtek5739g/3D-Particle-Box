@@ -79,7 +79,7 @@ class MyModel(HasTraits):
         self.plot2 = mlab_plt_cube(0,a,0,b,0,c)
 
     view = View(Item('scene', editor=SceneEditor(scene_class=MayaviScene),
-                     height=250, width=300, show_label=False),
+                     height=800, width=1000, show_label=False),
                 Group(
                         'nx', 'ny','nz','a','b','c'
                      ),
