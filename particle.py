@@ -63,7 +63,7 @@ class MyModel(HasTraits):
     def update_plot(self):
         mlab.clf()
         p, q, r = (self.nx, self.ny, self.nz)
-        self.plot = mlab.contour3d(abs((np.sin((p*np.pi*xx)/a))*(np.sin((q*np.pi*yy)/b))*(np.sin((r*np.pi*zz)/c)))**2, contours=6, transparent=True, name = 'Particle in 3D box')
+        self.plot = mlab.contour3d(abs((np.sqrt(8/(a*b*c))*np.sin((p*np.pi*xx)/a))*(np.sin((q*np.pi*yy)/b))*(np.sin((r*np.pi*zz)/c)))**2, contours=6, transparent=True, name = 'Particle in 3D box')
         mlab.axes(x_axis_visibility=True, y_axis_visibility=True, z_axis_visibility=True)
         self.plot2 = mlab_plt_cube(0,a,0,a,0,a)
 
@@ -74,8 +74,6 @@ class MyModel(HasTraits):
                      ),
                 resizable=True,
                 )
-
-
 
 def main():
     my_model = MyModel()
