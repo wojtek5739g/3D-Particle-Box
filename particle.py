@@ -54,15 +54,15 @@ class MyModel(HasTraits):
     nx = Range(1, 10, 1)
     ny = Range(1, 10, 1)
     nz = Range(1, 10, 1)
-    a = Range(10, 100, 1)
-    b = Range(10, 100, 1)
-    c = Range(10, 100, 1)
+    a = 100
+    b = 100
+    c = 100
 
     scene = Instance(MlabSceneModel, ())
     plot = Instance(PipelineBase)
     plot2 = Instance(PipelineBase)
 
-    @on_trait_change('nx,ny,nz,a,b,c,scene.activated')
+    @on_trait_change('nx,ny,nz,scene.activated')
     def update_plot(self):
         mlab.clf()
         p, q, r = (self.nx, self.ny, self.nz)
@@ -81,7 +81,7 @@ class MyModel(HasTraits):
     view = View(Item('scene', editor=SceneEditor(scene_class=MayaviScene),
                      height=800, width=1000, show_label=False),
                 Group(
-                        'nx', 'ny','nz','a','b','c'
+                        'nx', 'ny','nz'
                      ),
                 resizable=True,
                 )
