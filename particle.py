@@ -54,9 +54,9 @@ class MyModel(HasTraits):
     nx = Range(1, 10, 1)
     ny = Range(1, 10, 1)
     nz = Range(1, 10, 1)
-    a = Range(1, 100, 1)
-    b = Range(1, 100, 1)
-    c = Range(1, 100, 1)
+    a = Range(10, 100, 1)
+    b = Range(10, 100, 1)
+    c = Range(10, 100, 1)
 
     scene = Instance(MlabSceneModel, ())
     plot = Instance(PipelineBase)
